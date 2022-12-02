@@ -12,7 +12,7 @@ console.log("\n");
 
 // Check if input is valid
 if(playerChoice != null && (arrChoices.includes(playerChoice))){
-    playOneRound(playerChoice, computerChoice);
+    console.log(playOneRound(playerChoice, computerChoice));
 }
 else{
     console.log("Please enter a valid choice.[Rock, Paper, Scissors]");      
@@ -28,30 +28,30 @@ function getComputerChoice() {
 function playOneRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection)
     {
-        console.log("It ends in a stalemate!");
+        return "It ends in a stalemate!";
     }
     else if(playerSelection === "ROCK"){
         if(computerChoice === "PAPER") {
-            console.log("You lose! Paper covers Rock.");
+            return "You lose! Paper covers Rock.";
         } 
         else {
-            console.log("You win! Rock smashes Scissors.")
+            return "You win! Rock smashes Scissors.";
         }
     }
     else if(playerSelection === "PAPER") {
         if(computerChoice === "SCISSORS") {
-            console.log("You lose! Scissors cuts Paper.")
+            return "You lose! Scissors cuts Paper.";
         }
         else {
-            console.log("You win!. Paper covers Rock");
+            return "You win!. Paper covers Rock";
         }
     }
     else if(playerSelection === "SCISSORS") {
         if(computerChoice === "ROCK") {
-            console.log("You lose! Rock smashes Scissors.")
+            return "You lose! Rock smashes Scissors.";
         }
         else {
-            console.log("You win!. Scissors cuts Paper");
+            return "You win!. Scissors cuts Paper";
         }
     }
 }
